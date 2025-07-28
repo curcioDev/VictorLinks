@@ -192,6 +192,7 @@ body {
   background-position: top center;
   background-size: cover;
   height: 100vh;
+  overflow-x: hidden;
   /*Background do site*/
 }
 body * {
@@ -203,7 +204,7 @@ body * {
 #container {
   width: 100%;
   max-width: 588px;
-  margin: 56px auto 0px auto;
+  margin: 0 auto;
   padding: 0 24px;
   position: relative;
 }
