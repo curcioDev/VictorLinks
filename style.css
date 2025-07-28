@@ -1,0 +1,368 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/*light mode*/
+
+.light body {
+  background-image: url(/assets/bg-mobile-light.jpg);
+}
+
+.light p {
+  color: black;
+}
+
+.light footer {
+  color: black;
+}
+.light .victor {
+  color: black;
+  transition: 0.3 ease;
+}
+
+.light #switch button {
+  width: 32px;
+  height: 32px;
+  background: white;
+  border-radius: 50%;
+  border: 0;
+  background-image: url(./assets/sun.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.light .victor:hover {
+  text-shadow: 0 0 2px black;
+  transform: scale(1.03);
+}
+.light .whatsapp {
+  border: none;
+  border-radius: 12px;
+  background: linear-gradient(145deg, #25d366, #1ebe5d);
+  color: #fff;
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+  box-shadow: 0 0 0 transparent; /* estado inicial */
+}
+
+.light .whatsapp:hover {
+  border: none;
+  background: linear-gradient(145deg, #1bd458, #0fba4d);
+  transform: translateY(-2px);
+  box-shadow: 0 0 8px 0.8px #25d366; /* GLOW visível */
+}
+
+.light .linkedin {
+  border: none;
+  border-radius: 12px;
+  background: linear-gradient(145deg, #0077b5, #005f91);
+  color: #fff;
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+  box-shadow: 0 0 0 transparent;
+}
+
+.light .linkedin:hover {
+  border: none;
+  background: linear-gradient(145deg, #0088cc, #006aa7);
+  transform: translateY(-2px);
+  box-shadow: 0 0 8px 0.8px #0077b5;
+}
+
+.light .email {
+  border: none;
+  border-radius: 12px;
+  background: linear-gradient(145deg, #d93025, #b9241b);
+  color: #fff;
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+  box-shadow: 0 0 0 transparent;
+}
+
+.light .email:hover {
+  border: none;
+  background: linear-gradient(145deg, #e84136, #c62c24);
+  transform: translateY(-2px);
+  box-shadow: 0 0 8px 0.8px #d93025;
+}
+
+.light .github {
+  border: none;
+  border-radius: 12px;
+  background: linear-gradient(145deg, #171515, #0e0e0e);
+  color: #fff;
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+  box-shadow: 0 0 0 transparent;
+}
+
+.light .github:hover {
+  border: none;
+  background: linear-gradient(145deg, #1f1f1f, #000);
+  transform: translateY(-2px);
+  box-shadow: 0 0 8px 0.8px #000000cc;
+}
+
+/*light botton*/
+
+.light #switch {
+  width: 64px;
+  position: relative;
+  margin: 0 auto 12px auto;
+}
+
+.light #switch span {
+  display: block;
+  width: 64px;
+  height: 28px;
+  background: #d1d5db; /* cinza claro sofisticado */
+  border-radius: 9999px;
+  position: relative;
+  transition: background 0.3s ease;
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1);
+  border: 0.1px solid black;
+}
+
+.light #switch button {
+  width: 32px;
+  height: 32px;
+  background: white;
+  border: 0;
+  border-radius: 50%;
+  background-image: url("./assets/sun.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  position: absolute;
+  top: 50%;
+  right: 0;
+  left: initial;
+  transform: translateY(-50%);
+  z-index: 1;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 1px rgba(255, 193, 7, 0.4);
+  filter: brightness(1.1) drop-shadow(0 0 2px #fff);
+}
+
+body {
+  /* Background do site*/
+  background-image: url(/assets/bg-mobile.jpg);
+  background-repeat: no-repeat;
+  background-position: top center;
+  background-size: cover;
+  /*Background do site*/
+}
+body * {
+  font-family: "Inter", sans-serif;
+  font-weight: 400;
+  color: white;
+  text-align: center;
+}
+#container {
+  width: 360px;
+  margin: 56px auto 0px auto;
+  padding: 0 24px;
+  position: relative;
+}
+
+#profile {
+  text-align: center;
+  padding: 24px;
+}
+
+#profile img {
+  width: 112px;
+}
+
+#profile p {
+  font-weight: 500;
+  line-height: 24px;
+  margin-top: 8px;
+}
+
+/*botão*/
+
+#switch {
+  width: 64px;
+  position: relative;
+  margin: 0 auto 12px auto;
+}
+
+#switch button {
+  width: 32px;
+  height: 32px;
+  background: white;
+  border-radius: 50%;
+  border: 0;
+  background-image: url(/assets/moon-stars.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+  position: absolute;
+  z-index: 1;
+  transform: translateY(-50%);
+  top: 50%;
+  left: 0;
+  box-shadow: 0 0 4px rgba(7, 11, 255, 0.4);
+}
+
+#switch span {
+  display: block;
+  width: 64px;
+  height: 24px;
+
+  background: rgba(255, 255, 255, 0.1);
+
+  border: 1px solid rgba(255, 255, 255, 0.5);
+
+  backdrop-filter: blur(4px);
+
+  -webkit-backdrop-filter: blur(4px);
+
+  border-radius: 9999px;
+}
+
+/*lista das coisas*/
+
+ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.whatsapp {
+  display: block;
+  text-align: center;
+  padding: 16px 24px;
+  margin: 12px 0;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.1);
+  color: white;
+  text-decoration: none;
+  transition: 0.2s ease;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  position: relative;
+  list-style: none;
+}
+
+.whatsapp:hover {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1.5px solid white;
+  transform: scale(1.05);
+}
+
+.whatsapp .IconZap {
+  position: absolute;
+  left: 16px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 1.95rem;
+}
+
+.linkedin {
+  display: block;
+  text-align: center;
+  padding: 16px 24px;
+  margin: 12px 0;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.1);
+  color: white;
+  text-decoration: none;
+  transition: 0.2s ease;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  position: relative;
+}
+
+.linkedin:hover {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1.5px solid white;
+  transform: scale(1.05);
+}
+
+.linkedin .IconLink {
+  position: absolute;
+  left: 16px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 1.67rem;
+}
+.email {
+  display: block;
+  text-align: center;
+  padding: 16px 24px;
+  margin: 12px 0;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.1);
+  color: white;
+  text-decoration: none;
+  transition: 0.2s ease;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  position: relative;
+}
+
+.email:hover {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1.5px solid white;
+  transform: scale(1.05);
+}
+
+.email .IconEmail {
+  position: absolute;
+  left: 16px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 1.67rem;
+}
+
+.github {
+  display: block;
+  text-align: center;
+  padding: 16px 24px;
+  margin: 12px 0;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.1);
+  color: white;
+  text-decoration: none;
+  transition: 0.2s ease;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  position: relative;
+}
+
+.github:hover {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1.5px solid white;
+  transform: scale(1.05);
+}
+
+.github .IconGit {
+  position: absolute;
+  left: 16px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 1.67rem;
+}
+
+footer {
+  margin: 40px 0;
+  text-align: center;
+  word-spacing: 2.5px;
+}
+
+.victor {
+  display: inline-block;
+  transition: 0.3s ease;
+}
+
+.victor:hover {
+  text-shadow: 0 0 5px white;
+  transform: scale(1.03);
+}
