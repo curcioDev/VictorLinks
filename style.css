@@ -7,7 +7,7 @@
 /*light mode*/
 
 .light body {
-  background-image: url(/assets/bg-mobile-light.jpg);
+  background-image: url(assets/bg-mobile-light.jpg);
 }
 
 .light p {
@@ -28,7 +28,7 @@
   background: white;
   border-radius: 50%;
   border: 0;
-  background-image: url(./assets/sun.svg);
+  background-image: url(assets/sun.svg);
   background-repeat: no-repeat;
   background-position: center;
 }
@@ -172,7 +172,7 @@
   background: white;
   border: 0;
   border-radius: 50%;
-  background-image: url("./assets/sun.svg");
+  background-image: url("assets/sun.svg");
   background-repeat: no-repeat;
   background-position: center;
   position: absolute;
@@ -187,7 +187,7 @@
 
 body {
   /* Background do site*/
-  background-image: url(/assets/bg-mobile.jpg);
+  background-image: url(assets/bg-mobile.jpg);
   background-repeat: no-repeat;
   background-position: top center;
   background-size: cover;
@@ -237,7 +237,7 @@ body * {
   background: white;
   border-radius: 50%;
   border: 0;
-  background-image: url(/assets/moon-stars.svg);
+  background-image: url(assets/moon-stars.svg);
   background-repeat: no-repeat;
   background-position: center;
   position: absolute;
@@ -446,11 +446,11 @@ footer {
 
 @media (min-width: 700px) {
   body {
-    background-image: url(./assets/bg-desktop.jpg);
+    background-image: url(assets/bg-desktop.jpg);
   }
 
   .light body {
-    background-image: url(./assets/bg-desktop-light.jpg);
+    background-image: url(assets/bg-desktop-light.jpg);
   }
 }
 
