@@ -193,6 +193,7 @@ body {
   background-size: cover;
   min-height: 100dvh; /* novo padrão */
   min-height: 100vh; /* fallback */
+  transform: translateZ(0);
   -webkit-transform: translateZ(0);
 }
 
