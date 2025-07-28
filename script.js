@@ -12,18 +12,36 @@ function toggleMode() {
 }
 
 function mostrarEmail(event) {
-  event.preventDefault()
-
-  const texto = document.getElementById("email-texto")
+  const span = document.getElementById("email-texto")
   const email = "vcurcio.dev@gmail.com"
-  const original = "Email Profissional"
 
-  texto.classList.remove("fade-in")
-  texto.classList.add("fade-out")
+  if (span.textContent === email) return
+
+  span.classList.add("reveal-email")
+  span.textContent = email
+
+  // Copiar pro clipboard
+  navigator.clipboard
+    .writeText(email)
+    .then(() => {
+      mostrarToast() // chama o aviso
+    })
+    .catch((err) => {
+      console.error("Erro ao copiar:", err)
+    })
 
   setTimeout(() => {
-    texto.textContent = texto.textContent === original ? email : original
-    texto.classList.remove("fade-out")
-    texto.classList.add("fade-in")
-  }, 300) // tempo igual ao da animação
+    span.classList.remove("reveal-email")
+    span.textContent = "Email Profissional"
+  }, 3000)
+}
+
+// Aviso de "copiado"
+function mostrarToast() {
+  const toast = document.getElementById("copiado-toast")
+  toast.classList.add("mostrar")
+
+  setTimeout(() => {
+    toast.classList.remove("mostrar")
+  }, 2000)
 }
