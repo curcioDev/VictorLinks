@@ -618,11 +618,29 @@ footer {
 }
 
 @media (hover: none) and (pointer: coarse) {
-  .btn-mobile-feedback:active,
-  .btn-mobile-feedback.ativo {
+  .whatsapp:hover,
+  .linkedin:hover,
+  .insta:hover,
+  .email:hover,
+  .github:hover,
+  .victor:hover,
+  .light .whatsapp:hover,
+  .light .linkedin:hover,
+  .light .insta:hover,
+  .light .email:hover,
+  .light .github:hover,
+  .light .victor:hover {
+    transform: none !important;
+    background: inherit !important;
+    box-shadow: none !important;
+    filter: none !important;
+    border: inherit !important;
+  }
+
+  .ativo {
     transform: scale(0.97);
-    filter: brightness(1.15);
+    filter: brightness(1.2);
     box-shadow: 0 0 6px rgba(255, 255, 255, 0.2);
-    transition: transform 0.1s, filter 0.1s;
+    transition: transform 0.1s, filter 0.1s, box-shadow 0.1s;
   }
 }

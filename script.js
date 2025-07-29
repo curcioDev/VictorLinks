@@ -46,16 +46,20 @@ function mostrarToast() {
   }, 2000)
 }
 
-document
-  .querySelectorAll(".whatsapp, .linkedin, .insta, .email, .github")
-  .forEach((el) => {
-    el.addEventListener("touchstart", () => {
-      el.classList.add("ativo")
-    })
+const botões = document.querySelectorAll(
+  ".whatsapp, .linkedin, .insta, .email, .github"
+)
 
-    el.addEventListener("touchend", () => {
-      setTimeout(() => {
-        el.classList.remove("ativo")
-      }, 150) // pequena pausa pro efeito aparecer
-    })
+botões.forEach((el) => {
+  el.addEventListener("touchstart", () => {
+    el.classList.add("ativo")
   })
+
+  el.addEventListener("touchend", () => {
+    el.classList.remove("ativo")
+  })
+
+  el.addEventListener("touchcancel", () => {
+    el.classList.remove("ativo")
+  })
+})
