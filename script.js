@@ -45,3 +45,17 @@ function mostrarToast() {
     toast.classList.remove("mostrar")
   }, 2000)
 }
+
+document
+  .querySelectorAll(".whatsapp, .linkedin, .insta, .email, .github")
+  .forEach((el) => {
+    el.addEventListener("touchstart", () => {
+      el.classList.add("ativo")
+    })
+
+    el.addEventListener("touchend", () => {
+      setTimeout(() => {
+        el.classList.remove("ativo")
+      }, 150) // pequena pausa pro efeito aparecer
+    })
+  })
