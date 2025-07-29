@@ -46,20 +46,20 @@ function mostrarToast() {
   }, 2000)
 }
 
-const botões = document.querySelectorAll(
+// Seleciona todos os botões clicáveis
+const botoes = document.querySelectorAll(
   ".whatsapp, .linkedin, .insta, .email, .github"
 )
 
-botões.forEach((el) => {
-  el.addEventListener("touchstart", () => {
-    el.classList.add("ativo")
+// Para cada botão, adiciona comportamento de toque
+botoes.forEach((botao) => {
+  botao.addEventListener("touchstart", () => {
+    botao.classList.add("ativo")
   })
 
-  el.addEventListener("touchend", () => {
-    el.classList.remove("ativo")
-  })
-
-  el.addEventListener("touchcancel", () => {
-    el.classList.remove("ativo")
+  botao.addEventListener("touchend", () => {
+    setTimeout(() => {
+      botao.classList.remove("ativo")
+    }, 150) // tempo do efeito visível (em ms)
   })
 })
