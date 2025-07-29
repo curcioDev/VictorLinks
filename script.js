@@ -1,17 +1,17 @@
 function toggleMode() {
   const html = document.documentElement
-  const img = document.querySelector("#profile img")
-
   html.classList.toggle("light")
 
-  if (html.classList.contains("light")) {
-    img.setAttribute("src", "assets/avatar-light.png")
-  } else {
-    img.setAttribute("src", "assets/avatar.png")
-  }
+  const img = document.querySelector("#profile img")
+  img.setAttribute(
+    "src",
+    html.classList.contains("light")
+      ? "assets/avatar-light.png"
+      : "assets/avatar.png"
+  )
 }
 
-function mostrarEmail() {
+function mostrarEmail(event) {
   const span = document.getElementById("email-texto")
   const email = "vcurcio.dev@gmail.com"
 
@@ -22,10 +22,8 @@ function mostrarEmail() {
 
   navigator.clipboard
     .writeText(email)
-    .then(mostrarToast)
-    .catch((err) => {
-      console.error("Erro ao copiar:", err)
-    })
+    .then(() => mostrarToast())
+    .catch((err) => console.error("Erro ao copiar:", err))
 
   setTimeout(() => {
     span.classList.remove("reveal-email")
@@ -42,55 +40,29 @@ function mostrarToast() {
   }, 2000)
 }
 
-// Seleciona todos os botões interativos (inclusive o <p class="email">)
+// ------------------------
+// EFEITO DE CLIQUE LIMPO
+// ------------------------
+
+function ativarTemporariamente(el) {
+  el.classList.add("ativo")
+  setTimeout(() => {
+    el.classList.remove("ativo")
+  }, 150)
+}
+
 const botoes = document.querySelectorAll(
-  ".whatsapp, .linkedin, .insta, .email, .github"
+  "a.whatsapp, a.linkedin, a.insta, a.github, p.email"
 )
 
-botoes.forEach((botao) => {
-  // Efeito visual no toque/click
-  botao.addEventListener("touchstart", () => {
-    botao.classList.add("ativo")
+botoes.forEach((el) => {
+  el.addEventListener("click", (e) => {
+    ativarTemporariamente(el)
+
+    // No caso do email (que é um <p>), executa a função custom
+    if (el.tagName === "P") {
+      e.preventDefault()
+      mostrarEmail()
+    }
   })
-
-  botao.addEventListener("touchend", () => {
-    setTimeout(() => {
-      botao.classList.remove("ativo")
-    }, 150)
-  })
-
-  botao.addEventListener("mousedown", () => {
-    botao.classList.add("ativo")
-  })
-
-  botao.addEventListener("mouseup", () => {
-    setTimeout(() => {
-      botao.classList.remove("ativo")
-    }, 150)
-  })
-
-  // CORREÇÃO DO BUG: remove efeito travado após clique real
-  botao.addEventListener("click", () => {
-    setTimeout(() => {
-      document
-        .querySelectorAll(".ativo")
-        .forEach((el) => el.classList.remove("ativo"))
-    }, 300)
-  })
-})
-
-// Evita estado travado ao mudar de aba
-document.addEventListener("visibilitychange", () => {
-  if (document.visibilityState === "visible") {
-    document
-      .querySelectorAll(".ativo")
-      .forEach((el) => el.classList.remove("ativo"))
-  }
-})
-
-// Remove estado ativo ao carregar a página (extra segurança)
-window.addEventListener("load", () => {
-  document
-    .querySelectorAll(".ativo")
-    .forEach((el) => el.classList.remove("ativo"))
 })
