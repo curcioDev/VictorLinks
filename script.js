@@ -1,8 +1,8 @@
 function toggleMode() {
   const html = document.documentElement
-  html.classList.toggle("light")
-
   const img = document.querySelector("#profile img")
+
+  html.classList.toggle("light")
 
   if (html.classList.contains("light")) {
     img.setAttribute("src", "assets/avatar-light.png")
@@ -11,7 +11,7 @@ function toggleMode() {
   }
 }
 
-function mostrarEmail(event) {
+function mostrarEmail() {
   const span = document.getElementById("email-texto")
   const email = "vcurcio.dev@gmail.com"
 
@@ -22,9 +22,7 @@ function mostrarEmail(event) {
 
   navigator.clipboard
     .writeText(email)
-    .then(() => {
-      mostrarToast()
-    })
+    .then(mostrarToast)
     .catch((err) => {
       console.error("Erro ao copiar:", err)
     })
@@ -44,13 +42,13 @@ function mostrarToast() {
   }, 2000)
 }
 
-// Aplica efeito visual em todos os botões interativos
+// Seleciona todos os botões interativos (inclusive o <p class="email">)
 const botoes = document.querySelectorAll(
   ".whatsapp, .linkedin, .insta, .email, .github"
 )
 
 botoes.forEach((botao) => {
-  // Efeito ao tocar
+  // Efeito visual no toque/click
   botao.addEventListener("touchstart", () => {
     botao.classList.add("ativo")
   })
@@ -61,7 +59,6 @@ botoes.forEach((botao) => {
     }, 150)
   })
 
-  // Efeito ao clicar (pra desktop também)
   botao.addEventListener("mousedown", () => {
     botao.classList.add("ativo")
   })
@@ -71,9 +68,18 @@ botoes.forEach((botao) => {
       botao.classList.remove("ativo")
     }, 150)
   })
+
+  // CORREÇÃO DO BUG: remove efeito travado após clique real
+  botao.addEventListener("click", () => {
+    setTimeout(() => {
+      document
+        .querySelectorAll(".ativo")
+        .forEach((el) => el.classList.remove("ativo"))
+    }, 300)
+  })
 })
 
-// Remove .ativo se o usuário sair e voltar pra aba (corrige o bug principal)
+// Evita estado travado ao mudar de aba
 document.addEventListener("visibilitychange", () => {
   if (document.visibilityState === "visible") {
     document
@@ -82,17 +88,9 @@ document.addEventListener("visibilitychange", () => {
   }
 })
 
-// Remove .ativo ao recarregar (opcional mas seguro)
+// Remove estado ativo ao carregar a página (extra segurança)
 window.addEventListener("load", () => {
   document
     .querySelectorAll(".ativo")
     .forEach((el) => el.classList.remove("ativo"))
-})
-
-document.addEventListener("visibilitychange", () => {
-  if (!document.hidden) {
-    botoes.forEach((botao) => {
-      botao.classList.remove("ativo")
-    })
-  }
 })
