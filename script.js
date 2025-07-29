@@ -66,3 +66,15 @@ botoes.forEach((el) => {
     }
   })
 })
+
+const span = document.getElementById("texto-animado")
+const email = "vcurcio.dev@gmail.com"
+
+span.classList.remove("fade-in")
+span.classList.add("fade-out")
+
+setTimeout(() => {
+  span.textContent = email
+  span.classList.remove("fade-out")
+  span.classList.add("fade-in")
+}, 300)
