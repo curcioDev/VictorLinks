@@ -617,30 +617,9 @@ footer {
   transform: translateX(-50%) translateY(-10px);
 }
 
-@media (hover: none) and (pointer: coarse) {
-  .whatsapp:hover,
-  .linkedin:hover,
-  .insta:hover,
-  .email:hover,
-  .github:hover,
-  .victor:hover,
-  .light .whatsapp:hover,
-  .light .linkedin:hover,
-  .light .insta:hover,
-  .light .email:hover,
-  .light .github:hover,
-  .light .victor:hover {
-    transform: none !important;
-    background: inherit !important;
-    box-shadow: none !important;
-    filter: none !important;
-    border: inherit !important;
-  }
-}
-
 .ativo {
   transform: scale(0.97);
   filter: brightness(1.2);
   box-shadow: 0 0 6px rgba(255, 255, 255, 0.2);
-  transition: transform 0.1s, filter 0.1s, box-shadow 0.1s; /* <- AQUI TÁ CERTO */
-} /* <- VOCÊ DEVE GARANTIR QUE TENHA ESSA CHAVE */
+  transition: transform 0.1s, filter 0.1s, box-shadow 0.1s;
+}
