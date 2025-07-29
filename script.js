@@ -88,3 +88,11 @@ window.addEventListener("load", () => {
     .querySelectorAll(".ativo")
     .forEach((el) => el.classList.remove("ativo"))
 })
+
+document.addEventListener("visibilitychange", () => {
+  if (!document.hidden) {
+    botoes.forEach((botao) => {
+      botao.classList.remove("ativo")
+    })
+  }
+})
