@@ -20,11 +20,10 @@ function mostrarEmail(event) {
   span.classList.add("reveal-email")
   span.textContent = email
 
-  // Copiar pro clipboard
   navigator.clipboard
     .writeText(email)
     .then(() => {
-      mostrarToast() // chama o aviso
+      mostrarToast()
     })
     .catch((err) => {
       console.error("Erro ao copiar:", err)
@@ -36,7 +35,6 @@ function mostrarEmail(event) {
   }, 3000)
 }
 
-// Aviso de "copiado"
 function mostrarToast() {
   const toast = document.getElementById("copiado-toast")
   toast.classList.add("mostrar")
@@ -46,13 +44,13 @@ function mostrarToast() {
   }, 2000)
 }
 
-// Seleciona todos os botões clicáveis
+// Aplica efeito visual em todos os botões interativos
 const botoes = document.querySelectorAll(
   ".whatsapp, .linkedin, .insta, .email, .github"
 )
 
-// Para cada botão, adiciona comportamento de toque
 botoes.forEach((botao) => {
+  // Efeito ao tocar
   botao.addEventListener("touchstart", () => {
     botao.classList.add("ativo")
   })
@@ -60,6 +58,33 @@ botoes.forEach((botao) => {
   botao.addEventListener("touchend", () => {
     setTimeout(() => {
       botao.classList.remove("ativo")
-    }, 150) // tempo do efeito visível (em ms)
+    }, 150)
   })
+
+  // Efeito ao clicar (pra desktop também)
+  botao.addEventListener("mousedown", () => {
+    botao.classList.add("ativo")
+  })
+
+  botao.addEventListener("mouseup", () => {
+    setTimeout(() => {
+      botao.classList.remove("ativo")
+    }, 150)
+  })
+})
+
+// Remove .ativo se o usuário sair e voltar pra aba (corrige o bug principal)
+document.addEventListener("visibilitychange", () => {
+  if (document.visibilityState === "visible") {
+    document
+      .querySelectorAll(".ativo")
+      .forEach((el) => el.classList.remove("ativo"))
+  }
+})
+
+// Remove .ativo ao recarregar (opcional mas seguro)
+window.addEventListener("load", () => {
+  document
+    .querySelectorAll(".ativo")
+    .forEach((el) => el.classList.remove("ativo"))
 })
