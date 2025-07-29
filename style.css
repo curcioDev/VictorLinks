@@ -204,6 +204,7 @@ body * {
   font-weight: 400;
   color: white;
   text-align: center;
+  overflow: hidden;
 }
 #container {
   width: 100%;
@@ -301,16 +302,17 @@ ul {
   color: white;
   text-decoration: none;
   transition: 0.2s ease;
-  border: 1px solid rgba(255, 255, 255, 0.65);
+  border: 1.7px solid transparent;
   position: relative;
   list-style: none;
   background-clip: padding-box;
   backdrop-filter: blur(6px);
+  will-change: transform;
 }
 
 .whatsapp:hover {
   background: rgba(255, 255, 255, 0.05);
-  border: 1.7px solid white;
+  border-color: white;
   transform: scale(1.05);
 }
 
@@ -332,13 +334,14 @@ ul {
   color: white;
   text-decoration: none;
   transition: 0.2s ease;
-  border: 1px solid rgba(255, 255, 255, 0.65);
+  border: 1.7px solid transparent;
   position: relative;
+  will-change: transform;
 }
 
 .linkedin:hover {
   background: rgba(255, 255, 255, 0.05);
-  border: 1.7px solid white;
+  border-color: white;
   transform: scale(1.05);
 }
 
@@ -359,13 +362,14 @@ ul {
   color: white;
   text-decoration: none;
   transition: 0.2s ease;
-  border: 1px solid rgba(255, 255, 255, 0.65);
+  border: 1.7px solid transparent;
   position: relative;
+  will-change: transform;
 }
 
 .insta:hover {
   background: rgba(255, 255, 255, 0.05);
-  border: 1.7px solid white;
+  border-color: white;
   transform: scale(1.05);
 }
 
@@ -386,13 +390,14 @@ ul {
   color: white;
   text-decoration: none;
   transition: 0.2s ease;
-  border: 1px solid rgba(255, 255, 255, 0.65);
+  border: 1.7px solid transparent;
   position: relative;
+  will-change: transform;
 }
 
 .email:hover {
   background: rgba(255, 255, 255, 0.05);
-  border: 1.7px solid white;
+  border-color: white;
   transform: scale(1.05);
 }
 
@@ -414,13 +419,14 @@ ul {
   color: white;
   text-decoration: none;
   transition: 0.2s ease;
-  border: 1px solid rgba(255, 255, 255, 0.65);
+  border: 1.7px solid transparent;
   position: relative;
+  will-change: transform;
 }
 
 .github:hover {
   background: rgba(255, 255, 255, 0.05);
-  border: 1.7px solid white;
+  border-color: white;
   transform: scale(1.05);
 }
 
@@ -446,6 +452,7 @@ footer {
 .victor:hover {
   text-shadow: 0 0 5px white;
   transform: scale(1.03);
+  will-change: transform;
 }
 
 @media (min-width: 700px) {
