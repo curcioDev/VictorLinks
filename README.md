@@ -29,7 +29,7 @@ Interface desenvolvida com foco em dispositivos móveis, mas adaptada perfeitame
 
 ## 🧠 Aprendizado
 
-Projeto desenvolvido como parte do programa **Rocketseat One | Discover**, com o objetivo de aplicar conhecimentos em:
+Projeto desenvolvido como parte do programa **Rocketseat One**, com o objetivo de aplicar conhecimentos em:
 
 - Front-end moderno
 - Manipulação do DOM
